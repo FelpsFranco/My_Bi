@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+    <body>
+        <div class="page">
+            <form method="POST" class="formLogin">
+                {% csrf_token %}
+                <h1 style="font-size: 21px">Bem Vindo!</h1>
+                <p>Insira os dados de login nos campos abaixo.</p>
+                <label for="id_username">Login</label>
+                <input type="text" name="username" placeholder="Digite seu login" autofocus="true" />
+                <label for="id_password">Senha</label>
+                <input type="password" name="password" placeholder="Digite sua senha" />
+                <a class="new-pass" href="/">
+                    Esqueci minha senha
+                </a>
+                {% if user.is.authenticated %}
+                <a href="{% url 'dash' %}"> <input type="submit" value="Acessar" class="btn" /> </a>
+                {% else %}
+                <a href="{% url 'login' %}?next={% url 'dash' %}"> <input type="submit" value="Acessar" class="btn" /> </a>
+                {% endif %}
+            </form>
+            {% if messages %}
+            <div class="msg-alert">
+                {% for message in messages %}
+                    <span class="ms erro"> {{ message }} </span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
