@@ -5,13 +5,23 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 import pandas as pd
+import random
 
 
 @login_required
 def dash(request):
-    file = pd.read_csv("./dados/Chamados_abril.xlsx")
+    file = pd.read_excel("./Analisedados/dados/chamados_abril.xlsx")
+    analistas = file['Analista'].tolist()
+    chamados = file['Chamados'].tolist()
 
-    return render(request, "Analisedados/dash.html")
+    data = [['Analista', 'Chamados']]
+    colors = []
+    for analista, chamado in zip(analistas, chamados):
+        color = '#' + ''.join(random.choices('0123456789abcdef', k=6))
+        data.append([analista, chamado])
+        colors.append(color)
+    print(colors)
+    return render(request, "Analisedados/dash.html", {'data': data, 'colors': colors})
 
 
 # Create your views here.
