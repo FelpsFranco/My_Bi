@@ -71,12 +71,50 @@ body {
     margin-left: -1.8vw;
 }
 
-.chart_div {
-    font-size: 24px;
-    margin-left: 6vw;
-    margin-top: -49vw;
-    color: black;
-    width: 65vw;
-    height: 60vh;
 
+.chart_div {
+    font-size: 18px;
+    margin-left: 6vw;
+    margin-top: -40vw;
+    width: 55vw;
+    height: 55vh;
+    flex-wrap: wrap;
+}
+
+.date-div {
+    font-size: 14px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    color: black;
+    margin-left: 13vw;
+    margin-top: -33vw;
+    justify-content: center;
+}
+
+#initial-date {
+    font-size: 14px;
+    width: 8vw;
+    height: 2vw;
+    text-align: center;
+    border-radius: 8px;
+    color: #a60202;
+    margin-top: 1vw;
+}
+
+.date-fim-div {
+    font-size: 14px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    color: black;
+    margin-left: 26vw;
+    margin-top: -4.6vw;
+
+}
+
+#final-date {
+    font-size: 14px;
+    width: 8vw;
+    height: 2vw;
+    text-align: center;
+    border-radius: 8px;
+    color: #a60202;
+    margin-top: 1vw;
 }

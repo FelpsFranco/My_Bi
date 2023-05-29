@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 import pandas as pd
 import random
+import datetime as dt
 
 
 @login_required
@@ -20,8 +21,15 @@ def dash(request):
         color = '#' + ''.join(random.choices('0123456789abcdef', k=6))
         data.append([analista, chamado])
         colors.append(color)
-    print(colors)
-    return render(request, "Analisedados/dash.html", {'data': data, 'colors': colors})
+    datetime = dt.datetime.now()
+    formatted_date = datetime.strftime('%Y-%m-%d')
+    infor = {
+        'data': data,
+        'colors': colors,
+        'datetime': formatted_date
+    }
+    print(infor['datetime'])
+    return render(request, "Analisedados/dash.html", infor)
 
 
 # Create your views here.
