@@ -1,3 +1,4 @@
+
 @media (min-width: 1390px) {
 
     body {
@@ -5,17 +6,6 @@
         margin: 0;
         padding: 0;
         color: #fefefe;
-    }
-
-    .nav-menu {
-        background: #5D548E;
-        width: 6vw;
-        height: 100vh;
-
-    }
-
-    .btt-home {
-
     }
 
     .btn {
@@ -31,15 +21,15 @@
         text-align: left;
     }
 
-    .btn.btn a {
-        color: inherit;
-
+    .btn a {
+        color: #dddddd;
+        margin-top: 2vw;
     }
 
-    .a {
-        margin-top: 2vw;
-
-
+    .btn a:hover{
+        transform: scale(1.05);
+        background-color: #fefefe;
+        color: black;
     }
 
     .b {
@@ -78,12 +68,11 @@
         margin-left: -1.8vw;
     }
 
-
     .chart_div {
         font-size: 18px;
         margin-left: 6vw;
         margin-top: 1vw;
-        width: 55vw;
+        width: 60vw;
         height: 55vh;
         flex-wrap: wrap;
     }
@@ -118,10 +107,15 @@
         color: #a60202;
         margin-top: 1vw;
     }
+
+    .btn-data {
+        margin-left: 45vw;
+        margin-top: -25px;
+    }
 }
 
 
-@media (max-width: 1380px) {
+@media (max-width: 1390px) {
 
     body {
         font-family: 'Inter', sans-serif;
@@ -137,9 +131,6 @@
 
     }
 
-    .btt-home {
-
-    }
 
     .btn {
         background-color: #5D548E;
@@ -154,15 +145,22 @@
         text-align: left;
     }
 
+    .btn a {
+        color: #dddddd;
+        margin-top: 2vw;
+    }
+
     .a {
         margin-top: 2vw;
 
     }
 
+
     .b {
         margin-top: 3vw;
 
     }
+
 
     .c {
         margin-top: 3vw;
@@ -179,6 +177,12 @@
     }
 
     .btn:hover {
+        transform: scale(1.05);
+        background-color: #fefefe;
+        color: black;
+    }
+
+    .btn a:hover{
         transform: scale(1.05);
         background-color: #fefefe;
         color: black;
@@ -201,7 +205,7 @@
         font-size: 18px;
         margin-left: 6vw;
         margin-top: 1vw;
-        width: 55vw;
+        width: 60vw;
         height: 55vh;
         flex-wrap: wrap;
     }
@@ -243,5 +247,10 @@
         margin-top: -6px;
         margin-left: 5px;
         background: #5E5694;
+    }
+
+    .btn-data {
+        margin-left: 50vw;
+
     }
 }

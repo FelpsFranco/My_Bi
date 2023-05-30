@@ -10,5 +10,8 @@ class LoginRequiredMiddleware:
         if not request.user.is_authenticated and request.path == reverse('dash'):
             return redirect('index')
 
+        elif not request.user.is_authenticated and request.path == reverse('graphics'):
+            return redirect('index')
+
         response = self.get_response(request)
         return response

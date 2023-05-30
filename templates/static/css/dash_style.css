@@ -1,120 +1,207 @@
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fefefe;
+@media (min-width: 1390px) {
+
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #fefefe;
+    }
+
+    .nav-menu {
+        background: #5D548E;
+        width: 6vw;
+        height: 100vh;
+
+    }
+
+    .btt-home {
+
+    }
+
+    .btn {
+        background-color: #5D548E;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        border: none !important;
+        width: 98%;
+        height: 2vw;
+        transition: all linear 160ms;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .btn a {
+        color: #dddddd;
+        margin-top: 2vw;
+    }
+
+    .btn a:hover{
+        transform: scale(1.05);
+        background-color: #fefefe;
+        color: black;
+    }
+
+    .b {
+
+    }
+
+    .c {
+        margin-top: 3vw;
+
+    }
+
+
+    .d {
+        margin-top: 26vw;
+    }
+
+    .e {
+        margin-top: 3vw;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        background-color: #fefefe;
+        color: black;
+    }
+
+    .e:hover {
+        transform: scale(1.05);
+        background-color: #1b1b1b;
+        color: #dddddd;
+    }
+
+    .icon-exit {
+        width: 8vw;
+        height: 3vh;
+        margin-left: -1.8vw;
+    }
+
+
+    .chart_div {
+        font-size: 18px;
+        margin-left: 6vw;
+        margin-top: 1vw;
+        width: 55vw;
+        height: 55vh;
+        flex-wrap: wrap;
+    }
+
+    .date-div {
+        font-size: 14px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: black;
+        margin-left: 10vw;
+        margin-top: -50vw;
+        display: flex;
+
+    }
+
+    #initial-date {
+        font-size: 14px;
+        width: 8vw;
+        height: 2vw;
+        text-align: center;
+        border-radius: 8px;
+        color: #a60202;
+        margin-top: 1vw;
+    }
+
+
+    #final-date {
+        font-size: 14px;
+        width: 8vw;
+        height: 2vw;
+        text-align: center;
+        border-radius: 8px;
+        color: #a60202;
+        margin-top: 1vw;
+    }
 }
 
-.nav-menu {
-    background: #5D548E;
-    width: 6vw;
-    height: 100vh;
 
-}
+@media (max-width: 1380px) {
 
-.btt-home {
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #fefefe;
+    }
 
-}
+    .nav-menu {
+        background: #5D548E;
+        width: 6vw;
+        height: 100vh;
 
-.btn {
-    background-color: #5D548E;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none !important;
-    width: 98%;
-    height: 2vw;
-    transition: all linear 160ms;
-    cursor: pointer;
-    text-align:left;
-}
+    }
 
-.a {
-    margin-top: 2vw;
+    .btn {
+        background-color: #5D548E;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        border: none !important;
+        width: 98%;
+        height: 2vw;
+        transition: all linear 160ms;
+        cursor: pointer;
+        text-align: left;
+    }
 
-}
+    .btn a {
+        color: #dddddd;
+        margin-top: 2vw;
+    }
 
-.b {
-    margin-top: 3vw;
+    .a {
+        margin-top: 2vw;
 
-}
-
-.c {
-    margin-top: 3vw;
-
-}
-
-
-.d {
-    margin-top: 26vw;
-}
-
-.e {
-    margin-top: 3vw;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    background-color: #fefefe;
-    color: black;
-}
-
-.e:hover {
-    transform: scale(1.05);
-    background-color: #1b1b1b;
-    color: #dddddd;
-}
-
-.icon-exit {
-    width: 8vw;
-    height: 3vh;
-    margin-left: -1.8vw;
-}
+    }
 
 
-.chart_div {
-    font-size: 18px;
-    margin-left: 6vw;
-    margin-top: -40vw;
-    width: 55vw;
-    height: 55vh;
-    flex-wrap: wrap;
-}
+    .b {
+        margin-top: 3vw;
 
-.date-div {
-    font-size: 14px;
-    font-family:Verdana, Arial, Helvetica, sans-serif;
-    color: black;
-    margin-left: 13vw;
-    margin-top: -33vw;
-    justify-content: center;
-}
+    }
 
-#initial-date {
-    font-size: 14px;
-    width: 8vw;
-    height: 2vw;
-    text-align: center;
-    border-radius: 8px;
-    color: #a60202;
-    margin-top: 1vw;
-}
 
-.date-fim-div {
-    font-size: 14px;
-    font-family:Verdana, Arial, Helvetica, sans-serif;
-    color: black;
-    margin-left: 26vw;
-    margin-top: -4.6vw;
+    .c {
+        margin-top: 3vw;
 
-}
+    }
 
-#final-date {
-    font-size: 14px;
-    width: 8vw;
-    height: 2vw;
-    text-align: center;
-    border-radius: 8px;
-    color: #a60202;
-    margin-top: 1vw;
+
+    .d {
+        margin-top: 26vw;
+    }
+
+    .e {
+        margin-top: 3vw;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        background-color: #fefefe;
+        color: black;
+    }
+
+    .btn a:hover{
+        transform: scale(1.05);
+        background-color: #fefefe;
+        color: black;
+    }
+
+    .e:hover {
+        transform: scale(1.05);
+        background-color: #1b1b1b;
+        color: #dddddd;
+    }
+
+    .icon-exit {
+        width: 8vw;
+        height: 3vh;
+        margin-left: -1.8vw;
+    }
 }

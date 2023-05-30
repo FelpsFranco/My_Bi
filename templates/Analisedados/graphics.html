@@ -1,0 +1,83 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="{% static 'css/graphics_style.css' %}">
+    </head>
+    <body>
+        {% include 'Analisedados/partials/nav-bar.html' %}
+        <form method="GET">
+            <div class="date-div">
+                <label class="date-label" id="label-initial-date" for="initial-date"> Data Inicial <br> </label>
+                <input type="date" id="initial-date" name="initial-date-inp">
+                <label class="date-label" id="label-final-date" for="final-date"> Data Final <br> </label>
+                <input type="date" id="final-date" name="final-date-inp">
+            </div>
+            <button type="submit" class="btn-data" id="btn-submit-data"> Filtrar </button>
+        </form>
+        <div class="chart_div"> </div>
+    </body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawVisualization);
+        google.charts.setOnLoadCallback(function () {
+            document.getElementById('btn-submit-data').addEventListener('click', function () {
+                updtVisualization();
+            });
+        });
+
+        function drawVisualization() {
+            var data = google.visualization.arrayToDataTable({{ data|safe }});
+
+            var options = {
+                colors: {{ colors|safe }},
+                title : 'Chamados Por Analista',
+                vAxis: {title: 'Qtd Chamados'},
+                hAxis: {title: 'Analistas'},
+                seriesType: 'bars',
+                series: {8: {type: 'line'}}
+            };
+
+
+            var chart = new google.visualization.ComboChart(document.querySelector('.chart_div'));
+            chart.draw(data, options);
+
+            var initialDate = document.getElementById('initial-date');
+            initialDate.setAttribute('value', '{{ datetime }}');
+
+            var finalDate = document.getElementById('final-date');
+            finalDate.setAttribute('value', '{{ datetime }}');
+        }
+
+
+        function updtVisualization() {
+            var data = google.visualization.arrayToDataTable({{ data|safe }});
+
+            var options = {
+                colors: {{ colors|safe }},
+                title: 'Chamados Por Analista',
+                vAxis: {title: 'Qtd Chamados'},
+                hAxis: {title: 'Analistas'},
+                seriesType: 'bars',
+                series: {8: {type: 'line'}}
+            };
+
+            var initialDate = document.getElementById('initial-date');
+            initialDate.setAttribute('value', '{{ dI|safe }}');
+
+            var finalDate = document.getElementById('final-date');
+            finalDate.setAttribute('value', '{{ dF|safe }}');
+
+            var chart = new google.visualization.ComboChart(document.querySelector('.chart_div'));
+            chart.draw(data, options);
+        }
+
+    </script>
+</html>
+

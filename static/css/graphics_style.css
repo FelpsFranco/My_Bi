@@ -1,3 +1,4 @@
+
 @media (min-width: 1390px) {
 
     body {
@@ -6,78 +7,6 @@
         padding: 0;
         color: #fefefe;
     }
-
-    .nav-menu {
-        background: #5D548E;
-        width: 6vw;
-        height: 100vh;
-
-    }
-
-    .btt-home {
-
-    }
-
-    .btn {
-        background-color: #5D548E;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 600;
-        border: none !important;
-        width: 98%;
-        height: 2vw;
-        transition: all linear 160ms;
-        cursor: pointer;
-        text-align: left;
-    }
-
-    .btn.btn a {
-        color: inherit;
-
-    }
-
-    .a {
-        margin-top: 2vw;
-
-
-    }
-
-    .b {
-
-    }
-
-    .c {
-        margin-top: 3vw;
-
-    }
-
-
-    .d {
-        margin-top: 26vw;
-    }
-
-    .e {
-        margin-top: 3vw;
-    }
-
-    .btn:hover {
-        transform: scale(1.05);
-        background-color: #fefefe;
-        color: black;
-    }
-
-    .e:hover {
-        transform: scale(1.05);
-        background-color: #1b1b1b;
-        color: #dddddd;
-    }
-
-    .icon-exit {
-        width: 8vw;
-        height: 3vh;
-        margin-left: -1.8vw;
-    }
-
 
     .chart_div {
         font-size: 18px;
