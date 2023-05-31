@@ -8,13 +8,20 @@
         color: #fefefe;
     }
 
+    .nav-menu {
+        background: #5D548E;
+        width: 3vw;
+        height: 100vh;
+
+    }
+
     .btn {
         background-color: #5D548E;
         color: #fff;
         font-size: 14px;
         font-weight: 600;
         border: none !important;
-        width: 98%;
+        width: 100%;
         height: 2vw;
         transition: all linear 160ms;
         cursor: pointer;
@@ -26,15 +33,17 @@
         margin-top: 2vw;
     }
 
-    .btn a:hover{
-        transform: scale(1.05);
-        background-color: #fefefe;
-        color: black;
+    .a {
+        margin-top: 2vw;
+
     }
+
 
     .b {
+        margin-top: 3vw;
 
     }
+
 
     .c {
         margin-top: 3vw;
@@ -56,6 +65,12 @@
         color: black;
     }
 
+    .btn a:hover{
+        transform: scale(1.05);
+        background-color: #fefefe;
+        color: black;
+    }
+
     .e:hover {
         transform: scale(1.05);
         background-color: #1b1b1b;
@@ -63,54 +78,97 @@
     }
 
     .icon-exit {
-        width: 8vw;
-        height: 3vh;
-        margin-left: -1.8vw;
+        width: 5vw;
+        height: 2.5vh;
+        margin-left: -1.4vw;
     }
+
 
     .chart_div {
         font-size: 18px;
-        margin-left: 6vw;
+        margin-left: 5vw;
         margin-top: 1vw;
-        width: 60vw;
-        height: 55vh;
+        width: 50vw;
+        height: 40vh;
         flex-wrap: wrap;
+        border: 2px solid black;
     }
 
     .date-div {
         font-size: 14px;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         color: black;
-        margin-left: 10vw;
-        margin-top: -50vw;
+        margin-left: 5vw;
+        margin-top: -49vw;
         display: flex;
 
+    }
+
+    #label-final-date {
+        margin-left: 3vw;
     }
 
     #initial-date {
         font-size: 14px;
         width: 8vw;
-        height: 2vw;
+        height: 1.5vw;
         text-align: center;
         border-radius: 8px;
-        color: #a60202;
-        margin-top: 1vw;
+        color: #dddddd;
+        margin-top: -9px;
+        margin-left: 5px;
+        background: #5E5694;
     }
 
+    #initial-date::-webkit-calendar-picker-indicator{
+        cursor: pointer;
+    }
 
     #final-date {
         font-size: 14px;
         width: 8vw;
-        height: 2vw;
+        height: 1.5vw;
         text-align: center;
         border-radius: 8px;
-        color: #a60202;
-        margin-top: 1vw;
+        color: #dddddd;
+        margin-top: -9px;
+        margin-left: 5px;
+        background: #5E5694;
     }
 
-    .btn-data {
-        margin-left: 45vw;
-        margin-top: -25px;
+    #final-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+
+    #btn-submit-data {
+        margin-left: 5vw;
+        font-size: 14px;
+        width: 8vw;
+        height: 1.5vw;
+        text-align: center;
+        border-radius: 8px;
+        color: #dddddd;
+        margin-top: -6px;
+        background: #5E5694;
+        border: 2px;
+    }
+
+
+    #btn-submit-data:hover {
+        transform: scale(1.05);
+        background-color: black;
+        color: #fefefe;
+        cursor: pointer;
+    }
+
+    .chart_quality {
+        font-size: 16px;
+        margin-left: 53vw;
+        margin-top: -22vw;
+        width: 45vw;
+        height: 40vh;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
     }
 }
 
@@ -126,11 +184,10 @@
 
     .nav-menu {
         background: #5D548E;
-        width: 6vw;
+        width: 5vw;
         height: 100vh;
 
     }
-
 
     .btn {
         background-color: #5D548E;
@@ -197,24 +254,25 @@
     .icon-exit {
         width: 8vw;
         height: 3vh;
-        margin-left: -1.8vw;
+        margin-left: -2.1vw;
     }
 
 
     .chart_div {
         font-size: 18px;
-        margin-left: 6vw;
+        margin-left: 7vw;
         margin-top: 1vw;
-        width: 60vw;
-        height: 55vh;
+        width: 90vw;
+        height: 40vh;
         flex-wrap: wrap;
+        border: 2px solid black;
     }
 
     .date-div {
         font-size: 14px;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         color: black;
-        margin-left: 10vw;
+        margin-left: 7vw;
         margin-top: -46vw;
         display: flex;
 
@@ -223,6 +281,7 @@
     #label-final-date {
         margin-left: 3vw;
     }
+
 
     #initial-date {
         font-size: 14px;
@@ -236,6 +295,9 @@
         background: #5E5694;
     }
 
+    #initial-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
 
     #final-date {
         font-size: 14px;
@@ -249,8 +311,68 @@
         background: #5E5694;
     }
 
-    .btn-data {
-        margin-left: 50vw;
-
+    #final-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
     }
+
+    #btn-submit-data {
+        margin-left: 5vw;
+        font-size: 14px;
+        width: 8vw;
+        height: 2vw;
+        text-align: center;
+        border-radius: 8px;
+        color: #dddddd;
+        margin-top: -2px;
+        background: #5E5694;
+        border: 2px;
+    }
+
+
+    #btn-submit-data:hover {
+        transform: scale(1.05);
+        background-color: black;
+        color: #fefefe;
+        cursor: pointer;
+    }
+
+    .chart_quality {
+        font-size: 16px;
+        margin-left: 7vw;
+        margin-top: 1vw;
+        width: 45vw;
+        height: 40vh;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* Estilos para o spinner de carregamento */
+    #loading-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    /* Animação de rotação para o spinner de carregamento */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
 }

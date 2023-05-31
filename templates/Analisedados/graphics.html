@@ -17,26 +17,51 @@
                 <input type="date" id="initial-date" name="initial-date-inp">
                 <label class="date-label" id="label-final-date" for="final-date"> Data Final <br> </label>
                 <input type="date" id="final-date" name="final-date-inp">
+                <button type="submit" class="btn-data" id="btn-submit-data"> Filtrar </button>
             </div>
-            <button type="submit" class="btn-data" id="btn-submit-data"> Filtrar </button>
         </form>
         <div class="chart_div"> </div>
+        <div class="chart_quality"> </div>
+        <div id="loading-overlay">
+            <div id="loading-spinner"></div>
+        </div>
     </body>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawVisualization);
-        google.charts.setOnLoadCallback(function () {
-            document.getElementById('btn-submit-data').addEventListener('click', function () {
-                updtVisualization();
+
+        var loadingTimeout = 100;
+
+        function showLoadingOverlay() {
+            var loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'flex';
+        }
+
+        function hideLoadingOverlay() {
+            var loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'none';
+        }
+
+        function loadCharts() {
+            showLoadingOverlay();
+
+            var loadingTimer = setTimeout(function() {
+                hideLoadingOverlay();
+            }, loadingTimeout);
+
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(function() {
+                drawVisualization();
+                qualityVisualization();
+                hideLoadingOverlay();
+                clearTimeout(loadingTimer);
             });
-        });
+        }
 
         function drawVisualization() {
             var data = google.visualization.arrayToDataTable({{ data|safe }});
 
             var options = {
-                colors: ['#4ac1f7', '#006b1b'],
+                colors: ['#00363a', 'cornflowerblue'],
                 title : 'Chamados Por Analista',
                 vAxis: {title: 'Qtd Chamados'},
                 hAxis: {title: 'Analistas'},
@@ -49,34 +74,31 @@
             chart.draw(data, options);
 
             var initialDate = document.getElementById('initial-date');
-            initialDate.setAttribute('value', '{{ datetime }}');
+            initialDate.setAttribute('value', '{{ data_inicial }}');
 
             var finalDate = document.getElementById('final-date');
-            finalDate.setAttribute('value', '{{ datetime }}');
+            finalDate.setAttribute('value', '{{ data_final }}');
         }
 
-
-        function updtVisualization() {
-            var data = google.visualization.arrayToDataTable({{ data|safe }});
+        function qualityVisualization() {
+            var data = google.visualization.arrayToDataTable({{ quality|safe }});
 
             var options = {
-                colors: ['#4ac1f7', '#006b1b'],
-                title: 'Chamados Por Analista',
-                vAxis: {title: 'Qtd Chamados'},
+                colors: ['#006b1b', '#a60202'],
+                title : 'Qualidade de Atendimento',
+                vAxis: {title: 'Feedback'},
                 hAxis: {title: 'Analistas'},
                 seriesType: 'bars',
                 series: {8: {type: 'line'}}
             };
 
-            var initialDate = document.getElementById('initial-date');
-            initialDate.setAttribute('value', '{{ dI|safe }}');
 
-            var finalDate = document.getElementById('final-date');
-            finalDate.setAttribute('value', '{{ dF|safe }}');
-
-            var chart = new google.visualization.ComboChart(document.querySelector('.chart_div'));
+            var chart = new google.visualization.ComboChart(document.querySelector('.chart_quality'));
             chart.draw(data, options);
+
         }
+
+        setTimeout(loadCharts, 5000);
 
     </script>
 </html>
