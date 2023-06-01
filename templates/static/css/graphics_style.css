@@ -87,8 +87,8 @@
     .chart_div {
         font-size: 18px;
         margin-left: 5vw;
-        margin-top: 1vw;
-        width: 50vw;
+        margin-top: 3vw;
+        width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
         border: 2px solid black;
@@ -114,10 +114,10 @@
         height: 1.5vw;
         text-align: center;
         border-radius: 8px;
-        color: #dddddd;
+        color: black;
         margin-top: -9px;
         margin-left: 5px;
-        background: #5E5694;
+        background: #fefefe;
     }
 
     #initial-date::-webkit-calendar-picker-indicator{
@@ -130,10 +130,10 @@
         height: 1.5vw;
         text-align: center;
         border-radius: 8px;
-        color: #dddddd;
+        color: black;
         margin-top: -9px;
         margin-left: 5px;
-        background: #5E5694;
+        background: #fefefe;
     }
 
     #final-date::-webkit-calendar-picker-indicator {
@@ -161,14 +161,57 @@
         cursor: pointer;
     }
 
-    .chart_quality {
-        font-size: 16px;
-        margin-left: 53vw;
-        margin-top: -22vw;
-        width: 45vw;
+    .div-chart-pizza {
+        margin-left: 5vw;
+        margin-top: 1vw;
+        width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
         border: 0.2vw solid black;
+    }
+
+    .chart_quality {
+        font-size: 16px;
+        width: 45vw;
+        height: 38vh;
+        margin-left: 2vw;
+    }
+
+    .chart_pizza {
+        font-size: 16px;
+        width: 35vw;
+        height: 38vh;
+        margin-left: 55vw;
+        margin-top: -38vh;
+    }
+
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* Estilos para o spinner de carregamento */
+    #loading-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    /* Animação de rotação para o spinner de carregamento */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 }
 
@@ -261,7 +304,7 @@
     .chart_div {
         font-size: 18px;
         margin-left: 7vw;
-        margin-top: 1vw;
+        margin-top: 3vw;
         width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
@@ -289,10 +332,10 @@
         height: 2vw;
         text-align: center;
         border-radius: 8px;
-        color: #dddddd;
+        color: black;
         margin-top: -6px;
         margin-left: 5px;
-        background: #5E5694;
+        background: #fefefe;
     }
 
     #initial-date::-webkit-calendar-picker-indicator {
@@ -305,10 +348,10 @@
         height: 2vw;
         text-align: center;
         border-radius: 8px;
-        color: #dddddd;
+        color: black;
         margin-top: -6px;
         margin-left: 5px;
-        background: #5E5694;
+        background: #fefefe;
     }
 
     #final-date::-webkit-calendar-picker-indicator {
@@ -336,14 +379,29 @@
         cursor: pointer;
     }
 
-    .chart_quality {
-        font-size: 16px;
+
+    .div-chart-pizza {
         margin-left: 7vw;
         margin-top: 1vw;
-        width: 45vw;
+        width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
         border: 0.2vw solid black;
+    }
+
+    .chart_quality {
+        font-size: 16px;
+        margin-left: 1.5vw;
+        width: 45vw;
+        height: 38vh;
+    }
+
+    .chart_pizza {
+        font-size: 16px;
+        width: 40vw;
+        height: 38vh;
+        margin-left: 50vw;
+        margin-top: -38vh;
     }
 
     #loading-overlay {

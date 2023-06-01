@@ -21,7 +21,10 @@
             </div>
         </form>
         <div class="chart_div"> </div>
-        <div class="chart_quality"> </div>
+        <div class="div-chart-pizza">
+            <div class="chart_quality"> </div>
+            <div class="chart_pizza"> </div>
+        </div>
         <div id="loading-overlay">
             <div id="loading-spinner"></div>
         </div>
@@ -29,7 +32,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
-        var loadingTimeout = 100;
+        var loadingTimeout = 500;
 
         function showLoadingOverlay() {
             var loadingOverlay = document.getElementById('loading-overlay');
@@ -53,6 +56,7 @@
                 drawVisualization();
                 qualityVisualization();
                 hideLoadingOverlay();
+                pizzaVisualization();
                 clearTimeout(loadingTimer);
             });
         }
@@ -98,7 +102,21 @@
 
         }
 
-        setTimeout(loadCharts, 5000);
+        function pizzaVisualization() {
+            var data = google.visualization.arrayToDataTable({{ data|safe }});
+
+            var options = {
+                title: 'Participação Nos Chamados',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.querySelector('.chart_pizza'));
+
+            chart.draw(data, options);
+
+        }
+
+        setTimeout(loadCharts, 500);
 
     </script>
 </html>

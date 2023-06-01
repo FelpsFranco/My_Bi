@@ -4,8 +4,8 @@
     <facet type="django" name="Django">
       <configuration>
         <option name="rootFolder" value="$MODULE_DIR$/Analisedados" />
-        <option name="settingsModule" value="settings.py" />
-        <option name="manageScript" value="manage.py" />
+        <option name="settingsModule" value="" />
+        <option name="manageScript" value="" />
         <option name="environment" value="&lt;map/&gt;" />
         <option name="doNotUseTestRunner" value="false" />
         <option name="trackFilePattern" value="migrations" />
@@ -22,31 +22,6 @@
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/jinja2/django/forms" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/jinja2/django/forms/errors/dict" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/jinja2/django/forms/errors/list" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/jinja2/django/forms/widgets" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/jinja2/django/forms/formsets" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/templates/django/forms" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/templates/django/forms/errors/dict" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/templates/django/forms/errors/list" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/templates/django/forms/widgets" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/forms/templates/django/forms/formsets" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/views/templates" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/gis/templates/gis" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/gis/templates/gis/admin" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/auth/templates/auth/widgets" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/admin/templates/admin" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/admin/templates/admin/auth/user" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/admin/templates/admin/widgets" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/admin/templates/admin/includes" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/admin/templates/admin/edit_inline" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/admin/templates/registration" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/postgres/jinja2/postgres/widgets" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/postgres/templates/postgres/widgets" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/django/contrib/admindocs/templates/admin_doc" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/bootstrap5/templates/bootstrap5" />
-        <option value="$MODULE_DIR$/venv/Lib/site-packages/bootstrap5/templates/bootstrap5/widgets" />
         <option value="$MODULE_DIR$/templates/Analisedados" />
       </list>
     </option>
