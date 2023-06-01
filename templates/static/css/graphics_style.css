@@ -9,14 +9,16 @@
     }
 
     .nav-menu {
-        background: #5D548E;
+        background: #192E5B;
         width: 3vw;
         height: 100vh;
+        top: 0;
+        position: fixed;
 
     }
 
     .btn {
-        background-color: #5D548E;
+        background-color: #192E5B;
         color: #fff;
         font-size: 14px;
         font-weight: 600;
@@ -84,14 +86,20 @@
     }
 
 
-    .chart_div {
-        font-size: 18px;
+    .div-chart-chamados {
         margin-left: 5vw;
-        margin-top: 3vw;
+        margin-top: 2vw;
         width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
-        border: 2px solid black;
+        border: 0.2vw solid black;
+    }
+
+    .chart_div {
+        font-size: 18px;
+        width: 90vw;
+        height: 40vh;
+
     }
 
     .date-div {
@@ -99,7 +107,7 @@
         font-family: Verdana, Arial, Helvetica, sans-serif;
         color: black;
         margin-left: 5vw;
-        margin-top: -49vw;
+        margin-top: 2vw;
         display: flex;
 
     }
@@ -109,7 +117,7 @@
     }
 
     #initial-date {
-        font-size: 14px;
+        font-size: 16px;
         width: 8vw;
         height: 1.5vw;
         text-align: center;
@@ -125,7 +133,7 @@
     }
 
     #final-date {
-        font-size: 14px;
+        font-size: 16px;
         width: 8vw;
         height: 1.5vw;
         text-align: center;
@@ -142,14 +150,14 @@
 
     #btn-submit-data {
         margin-left: 5vw;
-        font-size: 14px;
+        font-size: 16px;
         width: 8vw;
         height: 1.5vw;
         text-align: center;
         border-radius: 8px;
         color: #dddddd;
         margin-top: -6px;
-        background: #5E5694;
+        background: #192E5B;
         border: 2px;
     }
 
@@ -161,6 +169,22 @@
         cursor: pointer;
     }
 
+    .div-chart-quality {
+        margin-left: 5vw;
+        margin-top: 1vw;
+        width: 90vw;
+        height: 40vh;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        font-size: 18px;
+    }
+
+    .chart_quality {
+        font-size: 18px;
+        width: 90vw;
+        height: 40vh;
+    }
+
     .div-chart-pizza {
         margin-left: 5vw;
         margin-top: 1vw;
@@ -168,21 +192,12 @@
         height: 40vh;
         flex-wrap: wrap;
         border: 0.2vw solid black;
-    }
-
-    .chart_quality {
-        font-size: 16px;
-        width: 45vw;
-        height: 38vh;
-        margin-left: 2vw;
+        font-size: 18px;
     }
 
     .chart_pizza {
-        font-size: 16px;
-        width: 35vw;
-        height: 38vh;
-        margin-left: 55vw;
-        margin-top: -38vh;
+        width: 90vw;
+        height: 40vh;
     }
 
     #loading-overlay {
@@ -226,14 +241,15 @@
     }
 
     .nav-menu {
-        background: #5D548E;
+        background: #192E5B;
         width: 5vw;
         height: 100vh;
-
+        top: 0;
+        position: fixed;
     }
 
     .btn {
-        background-color: #5D548E;
+        background-color: #192E5B;
         color: #fff;
         font-size: 14px;
         font-weight: 600;
@@ -290,8 +306,8 @@
 
     .e:hover {
         transform: scale(1.05);
-        background-color: #1b1b1b;
-        color: #dddddd;
+        background-color: #dddddd;
+        color: black;
     }
 
     .icon-exit {
@@ -301,22 +317,27 @@
     }
 
 
-    .chart_div {
-        font-size: 18px;
+    .div-chart-chamados {
         margin-left: 7vw;
-        margin-top: 3vw;
+        margin-top: 2vw;
         width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
-        border: 2px solid black;
+        border: 0.2vw solid black;
+    }
+
+    .chart_div {
+        font-size: 18px;
+        width: 90vw;
+        height: 40vh;
     }
 
     .date-div {
-        font-size: 14px;
+        font-size: 16px;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         color: black;
         margin-left: 7vw;
-        margin-top: -46vw;
+        margin-top: 3vw;
         display: flex;
 
     }
@@ -327,13 +348,13 @@
 
 
     #initial-date {
-        font-size: 14px;
-        width: 8vw;
+        font-size: 16px;
+        width: 10vw;
         height: 2vw;
         text-align: center;
         border-radius: 8px;
         color: black;
-        margin-top: -6px;
+        margin-top: -7px;
         margin-left: 5px;
         background: #fefefe;
     }
@@ -343,8 +364,8 @@
     }
 
     #final-date {
-        font-size: 14px;
-        width: 8vw;
+        font-size: 16px;
+        width: 10vw;
         height: 2vw;
         text-align: center;
         border-radius: 8px;
@@ -360,14 +381,14 @@
 
     #btn-submit-data {
         margin-left: 5vw;
-        font-size: 14px;
+        font-size: 16px;
         width: 8vw;
         height: 2vw;
         text-align: center;
         border-radius: 8px;
         color: #dddddd;
         margin-top: -2px;
-        background: #5E5694;
+        background: #192E5B;
         border: 2px;
     }
 
@@ -380,28 +401,35 @@
     }
 
 
-    .div-chart-pizza {
+    .div-chart-quality {
         margin-left: 7vw;
-        margin-top: 1vw;
+        margin-top: 2vw;
         width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
         border: 0.2vw solid black;
+        font-size: 18px;
     }
 
     .chart_quality {
-        font-size: 16px;
-        margin-left: 1.5vw;
-        width: 45vw;
-        height: 38vh;
+        font-size: 18px;
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .div-chart-pizza {
+        margin-left: 7vw;
+        margin-top: 2vw;
+        width: 90vw;
+        height: 40vh;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        font-size: 18px;
     }
 
     .chart_pizza {
-        font-size: 16px;
-        width: 40vw;
-        height: 38vh;
-        margin-left: 50vw;
-        margin-top: -38vh;
+        width: 90vw;
+        height: 40vh;
     }
 
     #loading-overlay {

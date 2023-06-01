@@ -8,11 +8,11 @@ from Analisedados.models import Atendimento, Atendente
 
 
 
-atendente1 = Atendente.objects.create(nome='John')
+atendente1 = Atendente.objects.create(nome='Victor')
 atendente1.save()
 
 
-registrados = [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 31, 0, 1, 0, 0, 0, 0]
+registrados = [0, 0, 9, 7, 0, 16, 0, 0, 0, 0, 14, 4, 0, 7, 0, 0, 14, 0, 9, 7, 0, 0, 0, 18, 7, 0, 19, 7, 0, 0]
 chamados = []
 qtd_positivos = []
 qtd_negativos = []

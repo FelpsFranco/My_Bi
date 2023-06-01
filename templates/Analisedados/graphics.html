@@ -14,15 +14,19 @@
         <form method="GET">
             <div class="date-div">
                 <label class="date-label" id="label-initial-date" for="initial-date"> Data Inicial <br> </label>
-                <input type="date" id="initial-date" name="initial-date-inp">
+                <input type="date" id="initial-date" name="initial-date-inp" min="2023-04-01" max="2023-05-31">
                 <label class="date-label" id="label-final-date" for="final-date"> Data Final <br> </label>
-                <input type="date" id="final-date" name="final-date-inp">
+                <input type="date" id="final-date" name="final-date-inp" min="2023-04-01" max="2023-05-31">
                 <button type="submit" class="btn-data" id="btn-submit-data"> Filtrar </button>
             </div>
         </form>
-        <div class="chart_div"> </div>
-        <div class="div-chart-pizza">
+        <div class="div-chart-chamados">
+            <div class="chart_div"> </div>
+        </div>
+        <div class="div-chart-quality">
             <div class="chart_quality"> </div>
+        </div>
+        <div class="div-chart-pizza">
             <div class="chart_pizza"> </div>
         </div>
         <div id="loading-overlay">
@@ -65,12 +69,12 @@
             var data = google.visualization.arrayToDataTable({{ data|safe }});
 
             var options = {
-                colors: ['#00363a', 'cornflowerblue'],
+                colors: ['#1D65A6', '#72A2C0'],
                 title : 'Chamados Por Analista',
                 vAxis: {title: 'Qtd Chamados'},
                 hAxis: {title: 'Analistas'},
                 seriesType: 'bars',
-                series: {8: {type: 'line'}}
+                series: {2: {type: 'line'}}
             };
 
 
@@ -88,12 +92,12 @@
             var data = google.visualization.arrayToDataTable({{ quality|safe }});
 
             var options = {
-                colors: ['#006b1b', '#a60202'],
+                colors: ['#00743F', '#F2A104'],
                 title : 'Qualidade de Atendimento',
-                vAxis: {title: 'Feedback'},
+                vAxis: {title: 'Classificação'},
                 hAxis: {title: 'Analistas'},
                 seriesType: 'bars',
-                series: {8: {type: 'line'}}
+                series: {2: {type: 'line'}}
             };
 
 
@@ -103,15 +107,20 @@
         }
 
         function pizzaVisualization() {
-            var data = google.visualization.arrayToDataTable({{ data|safe }});
+            var data = google.visualization.arrayToDataTable({{ percent|safe }});
+
 
             var options = {
-                title: 'Participação Nos Chamados',
-                is3D: true,
+                colors: ['#00743F', '#F2A104'],
+                title : 'Participação Nos Chamados',
+                vAxis: {title: 'Percentual'},
+                hAxis: {title: 'Analistas'},
+                seriesType: 'bars',
+                series: {2: {type: 'line'}}
             };
 
-            var chart = new google.visualization.PieChart(document.querySelector('.chart_pizza'));
 
+            var chart = new google.visualization.ComboChart(document.querySelector('.chart_pizza'));
             chart.draw(data, options);
 
         }
