@@ -8,7 +8,7 @@
     }
 
     .nav-menu {
-        background: #5D548E;
+        background: #192E5B;
         width: 3vw;
         height: 100vh;
 
@@ -16,7 +16,7 @@
 
 
     .btn {
-        background-color: #5D548E;
+        background-color: #192E5B;
         color: #fff;
         font-size: 14px;
         font-weight: 600;
@@ -82,6 +82,90 @@
         height: 2.5vh;
         margin-left: -1.4vw;
     }
+
+    .div-chart-chamados {
+        margin-left: 5vw;
+        margin-top: 1vw;
+        width: 90vw;
+        height: 40vh;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .chart_div {
+        font-size: 18px;
+        width: 90vw;
+        height: 40vh;
+
+    }
+
+    .date-div {
+        font-size: 14px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: black;
+        margin-left: 5vw;
+        margin-top: 2vw;
+        display: flex;
+
+    }
+
+    #label-final-date {
+        margin-left: 3vw;
+    }
+
+    #initial-date {
+        font-size: 16px;
+        width: 8vw;
+        height: 1.5vw;
+        text-align: center;
+        border-radius: 8px;
+        color: black;
+        margin-top: -9px;
+        margin-left: 5px;
+        background: #fefefe;
+    }
+
+    #initial-date::-webkit-calendar-picker-indicator{
+        cursor: pointer;
+    }
+
+    #final-date {
+        font-size: 16px;
+        width: 8vw;
+        height: 1.5vw;
+        text-align: center;
+        border-radius: 8px;
+        color: black;
+        margin-top: -9px;
+        margin-left: 5px;
+        background: #fefefe;
+    }
+
+    #final-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+
+    #btn-submit-data {
+        margin-left: 5vw;
+        font-size: 16px;
+        width: 8vw;
+        height: 1.5vw;
+        text-align: center;
+        border-radius: 8px;
+        color: #dddddd;
+        margin-top: -6px;
+        background: #192E5B;
+        border: 2px;
+    }
+
+
+    #btn-submit-data:hover {
+        transform: scale(1.05);
+        background-color: black;
+        color: #fefefe;
+        cursor: pointer;
+    }
+
 }
 
 
@@ -95,15 +179,16 @@
     }
 
     .nav-menu {
-        background: #5D548E;
+        background: #192E5B;
         width: 5vw;
         height: 100vh;
-
+        top: 0;
+        position: fixed;
     }
 
 
     .btn {
-        background-color: #5D548E;
+        background-color: #192E5B;
         color: #fff;
         font-size: 14px;
         font-weight: 600;
@@ -160,8 +245,8 @@
 
     .e:hover {
         transform: scale(1.05);
-        background-color: #1b1b1b;
-        color: #dddddd;
+        background-color: #dddddd;
+        color: black;
     }
 
     .icon-exit {
@@ -169,4 +254,88 @@
         height: 3vh;
         margin-left: -2.1vw;
     }
+
+    .div-chart-chamados {
+        margin-left: 7vw;
+        margin-top: 2vw;
+        width: 90vw;
+        height: 40vh;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .chart_div {
+        font-size: 18px;
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .date-div {
+        font-size: 16px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: black;
+        margin-left: 7vw;
+        margin-top: 3vw;
+        display: flex;
+
+    }
+
+    #label-final-date {
+        margin-left: 3vw;
+    }
+
+
+    #initial-date {
+        font-size: 16px;
+        width: 10vw;
+        height: 2vw;
+        text-align: center;
+        border-radius: 8px;
+        color: black;
+        margin-top: -7px;
+        margin-left: 5px;
+        background: #fefefe;
+    }
+
+    #initial-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+
+    #final-date {
+        font-size: 16px;
+        width: 10vw;
+        height: 2vw;
+        text-align: center;
+        border-radius: 8px;
+        color: black;
+        margin-top: -6px;
+        margin-left: 5px;
+        background: #fefefe;
+    }
+
+    #final-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+
+    #btn-submit-data {
+        margin-left: 5vw;
+        font-size: 16px;
+        width: 8vw;
+        height: 2vw;
+        text-align: center;
+        border-radius: 8px;
+        color: #dddddd;
+        margin-top: -2px;
+        background: #192E5B;
+        border: 2px;
+    }
+
+
+    #btn-submit-data:hover {
+        transform: scale(1.05);
+        background-color: black;
+        color: #fefefe;
+        cursor: pointer;
+    }
+
 }

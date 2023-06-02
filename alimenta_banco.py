@@ -1,38 +1,38 @@
-import os
-import django
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.settings')
-django.setup()
+# import os
+# import django
+#
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.settings')
+# django.setup()
 
 from Analisedados.models import Atendimento, Atendente
 
 
 
-atendente1 = Atendente.objects.create(nome='Victor')
-atendente1.save()
+# atendente1 = Atendente.objects.create(nome='Victor')
+# atendente1.save()
+#
+#
+# registrados = [0, 0, 9, 7, 0, 16, 0, 0, 0, 0, 14, 4, 0, 7, 0, 0, 14, 0, 9, 7, 0, 0, 0, 18, 7, 0, 19, 7, 0, 0]
+# chamados = [0, 0, 8, 6, 9, 9, 0, 0, 0, 12, 4, 3, 7, 6, 0, 0, 8, 8, 8, 5, 0, 0, 0, 10, 3, 7, 6, 7, 0, 0]
+# qtd_positivos = [0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0, 0, 0, 2, 0, 1, 0, 1, 0, 0]
+# qtd_negativos = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+#
+#
+# for z, chamado in enumerate(chamados):
+#     atendimento = Atendimento(
+#         atendente=atendente1,
+#         qtd_chamados=chamado,
+#         qtd_registrados=registrados[z],
+#         positivos=qtd_positivos[z],
+#         negativos=qtd_negativos[z],
+#         data='2023-04-'+str(z+1)
+#     )
+#     atendimento.save()
 
 
-registrados = [0, 0, 9, 7, 0, 16, 0, 0, 0, 0, 14, 4, 0, 7, 0, 0, 14, 0, 9, 7, 0, 0, 0, 18, 7, 0, 19, 7, 0, 0]
-chamados = []
-qtd_positivos = []
-qtd_negativos = []
 
 
-for z, chamado in enumerate(chamados):
-    atendimento = Atendimento(
-        atendente=atendente1,
-        qtd_chamados=chamado,
-        qtd_registrados=registrados[z],
-        positivos=qtd_positivos[z],
-        negativos=qtd_negativos[z],
-        data='2023-04-'+str(z+1)
-    )
-    atendimento.save()
-
-
-
-
-# Mostrar todos
+# # Mostrar todos
 # registros = Atendimento.objects.all()
 # for registro in registros:
 #     print("Nome:", registro.atendente.nome)
@@ -49,3 +49,4 @@ for z, chamado in enumerate(chamados):
 # Atendimento.objects.filter(atendente__in=analista).delete()
 #
 # analista.delete()
+

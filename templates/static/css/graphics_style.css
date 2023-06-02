@@ -88,7 +88,7 @@
 
     .div-chart-chamados {
         margin-left: 5vw;
-        margin-top: 2vw;
+        margin-top: 1vw;
         width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
@@ -187,7 +187,7 @@
 
     .div-chart-pizza {
         margin-left: 5vw;
-        margin-top: 1vw;
+        margin-top: 2vw;
         width: 90vw;
         height: 40vh;
         flex-wrap: wrap;
@@ -198,6 +198,35 @@
     .chart_pizza {
         width: 90vw;
         height: 40vh;
+    }
+
+    .btn-mes {
+        margin-left: -0.18vw;
+        margin-top: 1.5vh;
+        width: 7vw;
+        background: #192E5B;
+        color: white;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .btn-mes:hover {
+        background: black;
+        color: white;
+    }
+
+    .btn-dia {
+        margin-top: 2.2vh;
+        width: 7vw;
+        background: #192E5B;
+        color: white;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .btn-dia:hover {
+        background: black;
+        color: white;
     }
 
     #loading-overlay {
@@ -415,6 +444,35 @@
         font-size: 18px;
         width: 90vw;
         height: 40vh;
+    }
+
+    .btn-mes {
+        margin-left: -0.1vw;
+        margin-top: 1.3vh;
+        width: 7vw;
+        background: #192E5B;
+        color: white;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .btn-mes:hover {
+        background: black;
+        color: white;
+    }
+
+    .btn-dia {
+        margin-top: 1.3vh;
+        width: 7vw;
+        background: #192E5B;
+        color: white;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .btn-dia:hover {
+        background: black;
+        color: white;
     }
 
     .div-chart-pizza {

@@ -21,13 +21,15 @@
             </div>
         </form>
         <div class="div-chart-chamados">
-            <div class="chart_div"> </div>
+            <div class="chart_div">  </div>
+            <button class="btn-mes" onclick="mounthVisualization()"> Mês </button>
+            <button class="btn-dia" onclick="pizzaVisualization()"> Dia </button>
+        </div>
+        <div class="div-chart-pizza">
+            <div class="chart_pizza">  </div>
         </div>
         <div class="div-chart-quality">
             <div class="chart_quality"> </div>
-        </div>
-        <div class="div-chart-pizza">
-            <div class="chart_pizza"> </div>
         </div>
         <div id="loading-overlay">
             <div id="loading-spinner"></div>
@@ -111,10 +113,10 @@
 
 
             var options = {
-                colors: ['#00743F', '#F2A104'],
-                title : 'Participação Nos Chamados',
-                vAxis: {title: 'Percentual'},
-                hAxis: {title: 'Analistas'},
+                colors: ['#192E5B'],
+                title : 'Chamados no Dia',
+                vAxis: {title: 'Qtd Chamados'},
+                hAxis: {title: 'Dias'},
                 seriesType: 'bars',
                 series: {2: {type: 'line'}}
             };
@@ -123,6 +125,24 @@
             var chart = new google.visualization.ComboChart(document.querySelector('.chart_pizza'));
             chart.draw(data, options);
 
+        }
+
+        function mounthVisualization(){
+            var data = google.visualization.arrayToDataTable({{ mouth|safe }});
+
+
+            var options = {
+                colors: ['#192E5B'],
+                title : 'Chamados no Mês',
+                vAxis: {title: 'Qtd Chamados'},
+                hAxis: {title: 'Meses'},
+                seriesType: 'bars',
+                series: {2: {type: 'line'}}
+            };
+
+
+            var chart = new google.visualization.ComboChart(document.querySelector('.chart_pizza'));
+            chart.draw(data, options);
         }
 
         setTimeout(loadCharts, 500);

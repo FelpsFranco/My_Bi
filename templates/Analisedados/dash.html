@@ -11,6 +11,46 @@
     </head>
     <body>
         {% include 'Analisedados/partials/nav-bar.html' %}
+        <form method="GET">
+            <div class="date-div">
+                <label class="date-label" id="label-initial-date" for="initial-date"> Data Inicial <br> </label>
+                <input type="date" id="initial-date" name="initial-date-inp" min="2023-04-01" max="2023-05-31">
+                <label class="date-label" id="label-final-date" for="final-date"> Data Final <br> </label>
+                <input type="date" id="final-date" name="final-date-inp" min="2023-04-01" max="2023-05-31">
+                <button type="submit" class="btn-data" id="btn-submit-data"> Filtrar </button>
+            </div>
+        </form>
+        <div class="div-chart-chamados">
+            <div class="chart_div">  </div>
+        </div>
     </body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawVisualization);
+
+            function drawVisualization() {
+                var data = google.visualization.arrayToDataTable({{ data|safe }});
+
+                var options = {
+                    colors: ['#1D65A6', '#72A2C0'],
+                    title: 'Chamados Por Analista',
+                    vAxis: {title: 'Qtd Chamados'},
+                    hAxis: {title: 'Analistas'},
+                    seriesType: 'bars',
+                    series: {2: {type: 'line'}}
+                };
+
+
+                var chart = new google.visualization.ComboChart(document.querySelector('.chart_div'));
+                chart.draw(data, options);
+
+                var initialDate = document.getElementById('initial-date');
+                initialDate.setAttribute('value', '{{ data_inicial }}');
+
+                var finalDate = document.getElementById('final-date');
+                finalDate.setAttribute('value', '{{ data_final }}');
+            }
+    </script>
 </html>
 
