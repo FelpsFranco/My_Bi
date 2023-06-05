@@ -13,12 +13,8 @@
         height: 100vh;
         top: 0;
         position: fixed;
-
     }
 
-    .btt-home {
-
-    }
 
     .btn {
         background-color: #192E5B;
@@ -26,27 +22,29 @@
         font-size: 14px;
         font-weight: 600;
         border: none !important;
-        width: 98%;
+        width: 100%;
         height: 2vw;
         transition: all linear 160ms;
         cursor: pointer;
         text-align: left;
     }
 
-    .btn.btn a {
-        color: inherit;
-
+    .btn a {
+        color: #dddddd;
+        margin-top: 2vw;
     }
 
     .a {
         margin-top: 2vw;
 
-
     }
+
 
     .b {
+        margin-top: 3vw;
 
     }
+
 
     .c {
         margin-top: 3vw;
@@ -68,58 +66,191 @@
         color: black;
     }
 
-    .e:hover {
+    .btn a:hover{
         transform: scale(1.05);
         background-color: #fefefe;
         color: black;
     }
 
-    .icon-exit {
-        width: 8vw;
-        height: 3vh;
-        margin-left: -1.8vw;
+    .e:hover {
+        transform: scale(1.05);
+        background-color: #1b1b1b;
+        color: #dddddd;
     }
 
+    .icon-exit {
+        width: 5vw;
+        height: 2.5vh;
+        margin-left: -1.4vw;
+    }
+
+    .div-chart-chamados {
+        margin-left: 5vw;
+        margin-top: 1vw;
+        width: 92.5vw;
+        height: 40vh;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
 
     .chart_div {
         font-size: 18px;
-        margin-left: 6vw;
-        margin-top: 1vw;
-        width: 55vw;
-        height: 55vh;
-        flex-wrap: wrap;
+        width: 92.5vw;
+        height: 40vh;
+
     }
 
     .date-div {
         font-size: 14px;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         color: black;
-        margin-left: 10vw;
-        margin-top: -50vw;
+        margin-left: 5vw;
+        margin-top: 4vw;
         display: flex;
 
     }
 
-    #initial-date {
-        font-size: 14px;
-        width: 8vw;
-        height: 2vw;
-        text-align: center;
-        border-radius: 8px;
-        color: #a60202;
-        margin-top: 1vw;
+    #label-final-date {
+        margin-left: 3vw;
     }
 
+    #initial-date {
+        font-size: 16px;
+        width: 8vw;
+        height: 1.5vw;
+        text-align: center;
+        border-radius: 8px;
+        color: black;
+        margin-top: -9px;
+        margin-left: 5px;
+        background: #fefefe;
+    }
+
+    #initial-date::-webkit-calendar-picker-indicator{
+        cursor: pointer;
+    }
 
     #final-date {
-        font-size: 14px;
+        font-size: 16px;
         width: 8vw;
-        height: 2vw;
+        height: 1.5vw;
         text-align: center;
         border-radius: 8px;
-        color: #a60202;
-        margin-top: 1vw;
+        color: black;
+        margin-top: -9px;
+        margin-left: 5px;
+        background: #fefefe;
     }
+
+    #final-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+
+    #btn-submit-data {
+        margin-left: 5vw;
+        font-size: 16px;
+        width: 8vw;
+        height: 1.5vw;
+        text-align: center;
+        border-radius: 8px;
+        color: #dddddd;
+        margin-top: -6px;
+        background: #192E5B;
+        border: 2px;
+    }
+
+
+    #btn-submit-data:hover {
+        transform: scale(1.05);
+        background-color: black;
+        color: #fefefe;
+        cursor: pointer;
+    }
+
+    .div-valores {
+        margin-top: 2vh;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .div-valor-total {
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .div-valor-criados {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .div-valor-positivos {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .div-valor-negativos {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* Estilos para o spinner de carregamento */
+    #loading-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    /* Animação de rotação para o spinner de carregamento */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
 }
 
 
@@ -138,12 +269,8 @@
         height: 100vh;
         top: 0;
         position: fixed;
-
     }
 
-    .btt-home {
-
-    }
 
     .btn {
         background-color: #192E5B;
@@ -158,15 +285,22 @@
         text-align: left;
     }
 
+    .btn a {
+        color: #dddddd;
+        margin-top: 2vw;
+    }
+
     .a {
         margin-top: 2vw;
 
     }
 
+
     .b {
         margin-top: 3vw;
 
     }
+
 
     .c {
         margin-top: 3vw;
@@ -188,34 +322,45 @@
         color: black;
     }
 
-    .e:hover {
+    .btn a:hover{
         transform: scale(1.05);
         background-color: #fefefe;
+        color: black;
+    }
+
+    .e:hover {
+        transform: scale(1.05);
+        background-color: #dddddd;
         color: black;
     }
 
     .icon-exit {
         width: 8vw;
         height: 3vh;
-        margin-left: -1.8vw;
+        margin-left: -2.1vw;
     }
 
+    .div-chart-chamados {
+        margin-left: 7vw;
+        margin-top: 2vw;
+        width: 90vw;
+        height: 40vh;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
 
     .chart_div {
         font-size: 18px;
-        margin-left: 6vw;
-        margin-top: 1vw;
-        width: 55vw;
-        height: 55vh;
-        flex-wrap: wrap;
+        width: 90vw;
+        height: 40vh;
     }
 
     .date-div {
-        font-size: 14px;
+        font-size: 16px;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         color: black;
-        margin-left: 10vw;
-        margin-top: -46vw;
+        margin-left: 7vw;
+        margin-top: 4vw;
         display: flex;
 
     }
@@ -224,28 +369,165 @@
         margin-left: 3vw;
     }
 
+
     #initial-date {
-        font-size: 14px;
-        width: 8vw;
+        font-size: 16px;
+        width: 10vw;
         height: 2vw;
         text-align: center;
         border-radius: 8px;
-        color: #dddddd;
-        margin-top: -6px;
+        color: black;
+        margin-top: -7px;
         margin-left: 5px;
-        background: #5E5694;
+        background: #fefefe;
     }
 
+    #initial-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
 
     #final-date {
-        font-size: 14px;
+        font-size: 16px;
+        width: 10vw;
+        height: 2vw;
+        text-align: center;
+        border-radius: 8px;
+        color: black;
+        margin-top: -6px;
+        margin-left: 5px;
+        background: #fefefe;
+    }
+
+    #final-date::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+
+    #btn-submit-data {
+        margin-left: 5vw;
+        font-size: 16px;
         width: 8vw;
         height: 2vw;
         text-align: center;
         border-radius: 8px;
         color: #dddddd;
-        margin-top: -6px;
-        margin-left: 5px;
-        background: #5E5694;
+        margin-top: -2px;
+        background: #192E5B;
+        border: 2px;
     }
+
+
+    #btn-submit-data:hover {
+        transform: scale(1.05);
+        background-color: black;
+        color: #fefefe;
+        cursor: pointer;
+    }
+
+    .div-valores {
+        margin-top: 2vh;
+        margin-left: 7vw;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .div-valor-total {
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        background: #1D65A6;
+    }
+
+    .div-valor-criados {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        background: #1D65A6;
+    }
+
+    .div-valor-positivos {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        background: #1D65A6;
+    }
+
+    .div-valor-negativos {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        background: #1D65A6;
+    }
+
+    .div-obs {
+        margin-top: 2vh;
+        margin-left: 7vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        width: 62.3vw;
+        height: 8vw;
+
+    }
+
+    .logo-unk {
+        width: 25vw;
+        height: 20vh;
+        margin-left: 5vw;
+    }
+
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* Estilos para o spinner de carregamento */
+    #loading-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    /* Animação de rotação para o spinner de carregamento */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
 }

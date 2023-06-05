@@ -31,7 +31,6 @@ from Analisedados.models import Atendimento, Atendente
 
 
 
-
 # # Mostrar todos
 # registros = Atendimento.objects.all()
 # for registro in registros:
@@ -50,3 +49,16 @@ from Analisedados.models import Atendimento, Atendente
 #
 # analista.delete()
 
+# nome_analista = "Davi"
+# analista = Atendente.objects.get(nome=nome_analista)
+#
+# # Filtra os chamados pelo analista
+# chamados = Atendimento.objects.filter(atendente=analista)
+#
+# # Exibe os chamados
+# for chamado in chamados:
+#     print(f"ID: {chamado.id}, Analista: {chamado.atendente}, Data: {chamado.data}")
+
+
+# ids_chamados = [143]
+# Atendimento.objects.filter(id__in=ids_chamados).delete()

@@ -23,6 +23,11 @@ def busca_info(request):
         quality = graphics_quality(dI, dF)
         percent = percent_graphic(dI, dF)
         mounth = mounth_total(dI, dF)
+        total_cham = valor_total(dI, dF)
+        total_criados = valor_total_criados(dI, dF)
+        total_positivos = valor_total_positivos(dI, dF)
+        total_negativos = valor_total_negativos(dI, dF)
+        pontuacao = calcula_pontuacao(dI, dF)
         atendentes_filtrados = Atendente.objects.filter(atendimento__data__range=[dI, dF]).annotate(total_chamados=Sum('atendimento__qtd_chamados')).annotate(total_registros=Sum('atendimento__qtd_registrados'))
         if atendentes_filtrados is None:
             atendentes_filtrados = 0
@@ -43,9 +48,13 @@ def busca_info(request):
             'quality': quality,
             'percent': percent,
             'mouth': mounth,
+            'valor_total_chamados': total_cham,
+            'valor_total_criados': total_criados,
+            'valor_total_positivos': total_positivos,
+            'valor_total_negativos': total_negativos,
+            'pontuacao': pontuacao,
         }
         return infor
-
 
     else:
         atendentes = Atendente.objects.annotate(total_chamados=Sum('atendimento__qtd_chamados'))
@@ -56,6 +65,11 @@ def busca_info(request):
         quality = graphics_quality_not_form()
         percent = percent_graphic_not_validate_data()
         mounth = mounth_total_not_validate_data()
+        total_cham = valor_total_not_validate_data()
+        total_criados = valor_total_criados_not_validate_data()
+        total_positivos = valor_total_positivos_not_validate_data()
+        total_negativos = valor_total_negativos_not_validate_data()
+        pontuacao = calcula_pontuacao_not_validate_data()
         data = [['Analista', 'Jivo', 'ERP']]
         for analista, chamado, registrado in zip(analistas, chamados, registrados):
             data.append([analista, chamado, registrado])
@@ -68,6 +82,11 @@ def busca_info(request):
             'data': data,
             'percent': percent,
             'mouth': mounth,
+            'valor_total_chamados': total_cham,
+            'valor_total_criados': total_criados,
+            'valor_total_positivos': total_positivos,
+            'valor_total_negativos': total_negativos,
+            'pontuacao': pontuacao,
         }
         return infor
 
@@ -83,6 +102,116 @@ def graphics(request):
     infor = busca_info(request)
     return render(request, "Analisedados/graphics.html", infor)
 
+
+def calcula_pontuacao(dI, dF):
+    analistas = Atendente.objects.filter(atendimento__data__range=[dI, dF]).annotate(total_chamados=Sum('atendimento__qtd_chamados')).annotate(total_registros=Sum('atendimento__qtd_registrados')).annotate(total_positivos=Sum('atendimento__positivos'))
+
+    data = [['Analista', 'Pontuação']]
+
+    for analista in analistas:
+        chamados = analista.total_chamados or 0
+        registrados = analista.total_registros or 0
+        positivos = analista.total_positivos or 0
+
+        pontuacao = calcular_pontuacao(analista, chamados, registrados, positivos)
+
+        data.append([analista.nome, pontuacao])
+
+    return data
+
+
+def calcula_pontuacao_not_validate_data():
+    dI = '2023-04-01'
+    dF = '2023-05-31'
+    analistas = Atendente.objects.filter(atendimento__data__range=[dI, dF]).annotate(total_chamados=Sum('atendimento__qtd_chamados')).annotate(total_registros=Sum('atendimento__qtd_registrados')).annotate(total_positivos=Sum('atendimento__positivos'))
+
+    data = [['Analista', 'Pontuação']]
+
+    for analista in analistas:
+        chamados = analista.total_chamados or 0
+        registrados = analista.total_registros or 0
+        positivos = analista.total_positivos or 0
+
+        pontuacao = calcular_pontuacao(analista, chamados, registrados, positivos)
+
+        data.append([analista.nome, pontuacao])
+
+    return data
+
+
+def calcular_pontuacao(analista, total_chamados, total_registrados, positivos):
+    if total_chamados == 0:
+        percent_registrados = 0
+    else:
+        percent_registrados = (total_registrados / total_chamados) * 100
+
+    if percent_registrados <= 50:
+        peso = 5
+    elif percent_registrados < 80:
+        peso = 2
+    else:
+        peso = 1
+
+    if total_chamados == 0:
+        pontuacao = 0
+        return pontuacao
+    else:
+        pontuacao = (total_chamados + (total_registrados * 2) + (positivos * 2)) / peso
+        return pontuacao
+
+
+def valor_total(dI, dF):
+    total_chamados = Atendimento.objects.filter(data__range=[dI, dF]).aggregate(total=Sum('qtd_chamados'))['total']
+    if total_chamados is None:
+        total_chamados = 0
+    return total_chamados
+
+
+def valor_total_not_validate_data():
+    total_chamados = Atendimento.objects.aggregate(total=Sum('qtd_chamados'))['total']
+    if total_chamados is None:
+        total_chamados = 0
+    return total_chamados
+
+
+def valor_total_criados(dI, dF):
+    total_chamados = Atendimento.objects.filter(data__range=[dI, dF]).aggregate(total=Sum('qtd_registrados'))['total']
+    if total_chamados is None:
+        total_chamados = 0
+    return total_chamados
+
+def valor_total_criados_not_validate_data():
+    total_chamados = Atendimento.objects.aggregate(total=Sum('qtd_registrados'))['total']
+    if total_chamados is None:
+        total_chamados = 0
+    return total_chamados
+
+
+def valor_total_positivos(dI, dF):
+    total_chamados = Atendimento.objects.filter(data__range=[dI, dF]).aggregate(total=Sum('positivos'))['total']
+    if total_chamados is None:
+        total_chamados = 0
+    return total_chamados
+
+
+def valor_total_positivos_not_validate_data():
+    total_chamados = Atendimento.objects.aggregate(total=Sum('positivos'))['total']
+    if total_chamados is None:
+        total_chamados = 0
+    return total_chamados
+
+def valor_total_negativos(dI, dF):
+    total_chamados = Atendimento.objects.filter(data__range=[dI, dF]).aggregate(total=Sum('negativos'))['total']
+    if total_chamados is None:
+        total_chamados = 0
+    return total_chamados
+
+
+def valor_total_negativos_not_validate_data():
+    total_chamados = Atendimento.objects.aggregate(total=Sum('negativos'))['total']
+    if total_chamados is None:
+        total_chamados = 0
+    return total_chamados
 
 def percent_graphic(dI, dF):
     delta = dF - dI

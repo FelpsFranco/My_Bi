@@ -11,7 +11,8 @@
         background: #192E5B;
         width: 3vw;
         height: 100vh;
-
+        top: 0;
+        position: fixed;
     }
 
 
@@ -44,19 +45,8 @@
 
     }
 
-
-    .c {
-        margin-top: 3vw;
-
-    }
-
-
-    .d {
-        margin-top: 26vw;
-    }
-
     .e {
-        margin-top: 3vw;
+        margin-top: 37.85vw;
     }
 
     .btn:hover {
@@ -86,7 +76,7 @@
     .div-chart-chamados {
         margin-left: 5vw;
         margin-top: 1vw;
-        width: 90vw;
+        width: 92.5vw;
         height: 40vh;
         flex-wrap: wrap;
         border: 0.2vw solid black;
@@ -94,7 +84,7 @@
 
     .chart_div {
         font-size: 18px;
-        width: 90vw;
+        width: 92.5vw;
         height: 40vh;
 
     }
@@ -104,7 +94,7 @@
         font-family: Verdana, Arial, Helvetica, sans-serif;
         color: black;
         margin-left: 5vw;
-        margin-top: 2vw;
+        margin-top: 4vw;
         display: flex;
 
     }
@@ -166,6 +156,110 @@
         cursor: pointer;
     }
 
+    .div-valores {
+        margin-top: 2vh;
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .div-valor-total {
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .div-valor-criados {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .div-valor-positivos {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .div-valor-negativos {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+    }
+
+    .div-obs {
+        margin-top: -7vh;
+        margin-left: 5vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        width: 62.3vw;
+        height: 8vw;
+
+    }
+
+    .logo-unk {
+        width: 20vw;
+        height: 20vh;
+        margin-left: 5vw;
+        margin-top: 7vh;
+    }
+
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* Estilos para o spinner de carregamento */
+    #loading-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    /* Animação de rotação para o spinner de carregamento */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
 }
 
 
@@ -216,19 +310,8 @@
 
     }
 
-
-    .c {
-        margin-top: 3vw;
-
-    }
-
-
-    .d {
-        margin-top: 26vw;
-    }
-
     .e {
-        margin-top: 3vw;
+        margin-top: 36.1vw;
     }
 
     .btn:hover {
@@ -275,7 +358,7 @@
         font-family: Verdana, Arial, Helvetica, sans-serif;
         color: black;
         margin-left: 7vw;
-        margin-top: 3vw;
+        margin-top: 4vw;
         display: flex;
 
     }
@@ -336,6 +419,114 @@
         background-color: black;
         color: #fefefe;
         cursor: pointer;
+    }
+
+    .div-valores {
+        margin-top: 2vh;
+        margin-left: 7vw;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .div-valor-total {
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        background: #1D65A6;
+    }
+
+    .div-valor-criados {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        background: #1D65A6;
+    }
+
+    .div-valor-positivos {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        background: #1D65A6;
+    }
+
+    .div-valor-negativos {
+        margin-left: 0.5vw;
+        font-size: 18px;
+        width: 15vw;
+        height: 8vw;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        background: #1D65A6;
+    }
+
+    .div-obs {
+        margin-top: -7vh;
+        margin-left: 7vw;
+        color: black;
+        text-align: center;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        border: 0.2vw solid black;
+        width: 62.3vw;
+        height: 8vw;
+
+    }
+
+    .logo-unk {
+        width: 20vw;
+        height: 20vh;
+        margin-left: 5vw;
+        margin-top: 7vh;
+    }
+
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    /* Estilos para o spinner de carregamento */
+    #loading-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    /* Animação de rotação para o spinner de carregamento */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 
 }

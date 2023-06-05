@@ -23,19 +23,69 @@
         <div class="div-chart-chamados">
             <div class="chart_div">  </div>
         </div>
+        <div class="div-valores">
+            <div class="div-valor-total">
+                <p>Total Chamados Jivo <br> </p>
+                <p style="font-size: 24px"> {{ valor_total_chamados }} </p>
+            </div>
+            <div class="div-valor-criados">
+                <p>Total Chamados Criados <br> </p>
+                <p style="font-size: 24px"> {{ valor_total_criados }} </p>
+            </div>
+            <div class="div-valor-positivos">
+                <p>Total Positivos <br> </p>
+                <p style="font-size: 24px"> {{ valor_total_positivos }} </p>
+            </div>
+            <div class="div-valor-negativos">
+                <p>Total Negativos <br> </p>
+                <p style="font-size: 24px"> {{ valor_total_negativos }} </p>
+            </div>
+            <img src="{% static 'img/logo.png' %}" alt="Unika Sistemas" class="logo-unk">
+        </div>
+        <div class="div-obs">
+            <p> Pontuação gerada somente a partir dos atendimento realizados pelo JIVO <br> </p>
+            <p> (Chamados + (Registrados * 2) + (Positivos * 2)) / Peso <br> </p>
+            <p> Peso 5 = Registrados <= 50% | Peso 2 = Registrados < 80% | Peso 2 = Registrados >= 80%</p>
+        </div>
+        <div id="loading-overlay">
+            <div id="loading-spinner"></div>
+        </div>
     </body>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawVisualization);
 
-            function drawVisualization() {
-                var data = google.visualization.arrayToDataTable({{ data|safe }});
+            var loadingTimeout = 500;
+
+            function showLoadingOverlay() {
+                var loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.display = 'flex';
+            }
+
+            function hideLoadingOverlay() {
+                var loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.display = 'none';
+            }
+
+            function loadCharts() {
+                showLoadingOverlay();
+
+                var loadingTimer = setTimeout(function() {
+                    hideLoadingOverlay();
+                }, loadingTimeout);
+
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(function() {
+                    chamadosVisualization();
+                });
+            }
+
+            function chamadosVisualization() {
+                var data = google.visualization.arrayToDataTable({{ pontuacao|safe }});
 
                 var options = {
-                    colors: ['#1D65A6', '#72A2C0'],
-                    title: 'Chamados Por Analista',
-                    vAxis: {title: 'Qtd Chamados'},
+                    colors: ['#72A2C0'],
+                    title: 'Pontuação Por Analista',
+                    vAxis: {title: 'Pontos'},
                     hAxis: {title: 'Analistas'},
                     seriesType: 'bars',
                     series: {2: {type: 'line'}}
@@ -51,6 +101,8 @@
                 var finalDate = document.getElementById('final-date');
                 finalDate.setAttribute('value', '{{ data_final }}');
             }
+
+            setTimeout(loadCharts, 500);
     </script>
 </html>
 
